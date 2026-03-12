@@ -39,5 +39,5 @@ def sort_patients(sort_by: str=Query(..., description="The field to sort patient
         raise HTTPException(status_code=400, detail='Invalid sort order. Valid options are: asc, desc')
     
     sort_order= True if order=='asc' else False
-    sorted_data=sorted(data.values(), key=lambda x: x.get(sort_by,0), reverse=sort_order)
+    sorted_data=sorted(data.values(), key=lambda x: x.get(sort_by,0), reverse=  not sort_order)
     return sorted_data
