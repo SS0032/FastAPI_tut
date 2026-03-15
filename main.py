@@ -132,7 +132,10 @@ def delete_patient(patient_id:str):
 
     del data[patient_id]
     save_data(data)
-    return JSONResponse(status_code=200, content={"message": "Patient deleted successfully"})    
+    return JSONResponse(status_code=200, content={"message": "Patient deleted successfully"}) 
+
+
+#PUT and DELETE endpoints are added to allow updating and deleting patient records. The update endpoint allows partial updates, meaning you can update only the fields you want without providing the entire patient data.
 
 
 
